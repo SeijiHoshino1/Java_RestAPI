@@ -3,6 +3,8 @@ package com.example.demo.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.List;
+
 @Entity
 @Table(name = "Party")
 @Builder
@@ -19,4 +21,12 @@ public class Party {
     private String name;
     @Column(name = "address")
     private String address;
+    @Column(name = "people_amount")
+    private Integer people_amount;
+
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "user_id", referencedColumnName = "id")
+    private Users users;
+
+    public List<Party> PartyModelList;
 }

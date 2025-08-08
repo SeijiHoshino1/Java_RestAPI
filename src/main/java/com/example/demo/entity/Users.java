@@ -20,5 +20,4 @@ public class Users {
     private String document_id;
     @Column(name = "age")
     private Integer age;
-
 }
